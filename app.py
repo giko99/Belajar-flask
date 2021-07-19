@@ -5,55 +5,6 @@ app = Flask(__name__)
 app.jinja_env.filters["zip"] = zip
 app.config["SECRET_KEY"] = "ini secret key ku 2021"
 
-# @app.route("/")
-# def indexku():
-#     #balajar looping
-#     hari = ['senin', 'selasa', 'rabu']
-#     #conditioning if else
-#     suasana = "sedih" #jika senang maka dia juga cinta, jika tidak die saja
-#     return render_template("index.html", value=hari, suasana=suasana)
-
-# @app.route("/contact")
-# def contactku():
-#     return render_template("contact.html")
-
-# @app.route("/about")
-# def aboutku():
-#     return render_template("about.html")
-
-
-# #parsing nilai int, string
-# @app.route("/parsing/<string:nilaiku>")
-# def coba_parsing(nilaiku):
-#     return "nilainya adalah : {}".format(nilaiku)
-
-# #argument parser
-# @app.route("/parsingargument")
-# def argument():
-#     data = request.args.get("nilai")
-#     return "nilai dari argument parser adalah {}".format(data)
-
-# #memparsing nilai dari url untuk set nilai session
-# @app.route("/halaman/<int:nilai>")
-# def session_1(nilai):
-#     session["nilaiku"] = nilai
-#     return "berhasil set nilai"
-
-# @app.route("/halaman/lihat")
-# def view_session_1():
-#     try: #try except ini sama dengan if else
-#         data = session["nilaiku"]
-#         return "Nilai yang telah di set adalah = {}".format(data)
-#     except:
-#         return "anda tidak memiliki session lagi"
-
-
-# #logout
-# @app.route("/halaman/logout")
-# def logout_session_1():
-#     session.pop("nilaiku")
-#     return "Berhasil logout atau menghapus session"
-
 @app.route("/", methods=["POST", "GET"])
 def index():
 
