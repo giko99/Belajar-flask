@@ -1,0 +1,19 @@
+{% extends "main_layout.html"%}
+{% block content %}
+<p>{{ nilai }}</p>
+
+<table>
+    <tr>
+        <th>No</th>
+        <th>Nama buah</th>
+        <th>Nama hewan </th>
+    </tr>
+    {% for nomor_kolom, buah, hewan in data["no"] | zip(data["buah"], data["hewan"]) %}
+    <tr>
+        <td>{{ nomor_kolom }}</td>
+        <td>{{ buah }}</td>
+        <td>{{ hewan }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
